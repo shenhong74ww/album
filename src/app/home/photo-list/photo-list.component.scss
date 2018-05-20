@@ -1,0 +1,16 @@
+.card {
+    display: flex;
+    max-width: 30%;
+    height: auto;
+    background-size: cover;
+    margin: 20px;
+}
+
+.photo-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: center;
+    max-width: 1150px;
+}

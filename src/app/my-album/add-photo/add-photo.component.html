@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" #addPhotoForm="ngForm">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>添加照片</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-input-container class="full-width">
+        <input matInput type="text" name="photoName" placeholder="照片名字" [(ngModel)]="newPhoto.photoName" required>
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput type="text" name="title" placeholder="照片标题" [(ngModel)]="newPhoto.title" required>
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <textarea matInput name="description" placeholder="照片描述" [(ngModel)]="newPhoto.description"></textarea>
+      </mat-input-container>
+      <div class="header" *ngIf="uploadPhotoService.showImage">
+        <img [src]="uploadPhotoService.imageUrl">
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="upload-file">
+      <input type="file" placeholder="选择文件" (change)="uploadPhotoService.fileChangeEvent($event)">
+      <button mat-raised-button type="button" color="accent" (click)="uploadPhotoService.upload()">上传</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="button">
+    <span><button mat-raised-button type="submit" color="primary">提交</button></span>
+    <span><button mat-raised-button type="button" color="primary" [routerLink]="['/my-album']" >返回</button></span>
+  </div>
+</form>

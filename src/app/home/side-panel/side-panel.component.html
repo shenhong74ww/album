@@ -1,0 +1,10 @@
+<div class="photo-rankings">
+    <h4>Photo Rankings</h4>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" class="photo-rankings-list">
+        <mat-grid-tile *ngFor="let photo of photos" class="photo-row">
+            <app-photo-row [item]="photo">
+            </app-photo-row>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

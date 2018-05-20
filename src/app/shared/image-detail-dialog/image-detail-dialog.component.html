@@ -1,0 +1,64 @@
+<div class="close">
+  <div class="full-width"></div>
+  <button  mat-icon-button mat-dialog-title mat-dialog-close>
+    <mat-icon svgIcon="close"></mat-icon>
+  </button>
+</div>
+<div class="image-detail">
+  <div class="image">
+    <img class="zoomImage" src="http://localhost:8080/images/{{photo.imageName}}" alt="照片">
+  </div>
+  <div class="side-bar">
+    <button mat-raised-button color="primary" class="download-button">
+      <mat-icon svgIcon="download"></mat-icon>
+      免费下载
+    </button>
+    <div class="button-icon">
+      <button mat-raised-button (click)="onInviteClick()">
+        <mat-icon svgIcon="black-add"></mat-icon>
+      </button>
+      <button mat-raised-button (click)="onDelClick()">
+        <mat-icon svgIcon="black-heart"></mat-icon>
+      </button>
+    </div>
+    <div class="avatar-name">
+        <button  mat-icon-button (click)="onEditClick()">
+          <mat-icon class="avatar" [svgIcon]="photo.user.avatar"></mat-icon>
+        </button>
+        <label>{{photo.user.name}}</label>
+    </div>
+  </div>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<mat-card class="all-comments" *ngFor="let comment of comments">
+  <div>
+    <button  mat-icon-button (click)="onEditClick()">
+      <mat-icon class="avatar" [svgIcon]="comment.user.avatar"></mat-icon>
+    </button>
+    <div>{{comment.user.name}}</div>
+  </div>
+  <span class="chip">
+    <mat-chip-list>
+      <mat-chip class="chip-item" color="primary" selected="true">{{comment.content}}</mat-chip>
+    </mat-chip-list>
+  </span>
+</mat-card>
+<mat-paginator [length]="length"
+              [pageSize]="3"
+              [pageSizeOptions]="[3, 5, 10]"
+              [pageIndex]="pageIndex"
+              (page)="pageEvent = getServerData($event)">
+</mat-paginator>
+<br>
+<mat-divider></mat-divider>
+<br>
+<div>
+  <form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Leave a comment" [(ngModel)]="newComment.content" name="content"></textarea>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">发送</button>
+  </form>
+</div>

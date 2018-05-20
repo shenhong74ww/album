@@ -1,0 +1,19 @@
+<div class="photo-item">
+  <img class="zoomImage" src="http://localhost:8080/images/{{item.imageName}}" alt="照片" (click)="onSelect(item)">
+  <div class="icon-button" [style.display]="showAction ? 'block' : 'none'">
+    <div class="avatar-name">
+      <button  mat-icon-button (click)="onEditClick()">
+        <mat-icon class="avatar" [svgIcon]="item.user.avatar"></mat-icon>
+      </button>
+      <label>{{item.user.name}}</label>
+    </div>
+    <div class="add-heart">
+      <button  mat-icon-button>
+        <mat-icon svgIcon="add"></mat-icon>
+      </button>
+      <button  mat-icon-button (click)="likeClick(item)">
+        <mat-icon [svgIcon]="item.heartKind"></mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<mat-nav-list>
+  <h3 mat-subheader>主页</h3>
+  <mat-list-item [routerLink]="['/home']" (click)="onNavClick()">
+    <mat-icon mat-list-icon>home</mat-icon>
+    <span mat-line>我的主页</span>
+    <span mat-line mat-subheader>进入我的主页面</span>
+  </mat-list-item>
+  <h3 mat-subheader>相簿</h3>
+  <mat-list-item [routerLink]="['/my-album']" (click)="onNavClick()">
+    <mat-icon mat-list-icon>photo</mat-icon>
+    <span mat-line>我的相簿</span>
+    <span mat-line mat-subheader>查看我的相簿内容</span>
+  </mat-list-item>
+  <h3 mat-subheader>报表</h3>
+  <mat-list-item [routerLink]="['/report']" (click)="onNavClick()">
+    <mat-icon mat-list-icon>report</mat-icon>
+    <span mat-line>查看报表</span>
+    <span mat-line mat-subheader>查看当日报表详情</span>
+  </mat-list-item>
+</mat-nav-list>

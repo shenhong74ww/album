@@ -1,0 +1,65 @@
+.zoomImage{
+    display: block;
+    max-width: 800px;
+    max-height: 600px;
+    background-size: cover;
+}
+
+.image-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-name {
+    margin-top: 50px;
+}
+
+.download-button {
+    margin-bottom: 20px;
+}
+
+mat-icon.avatar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.all-comments {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.chip {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.chip-item {
+    max-width: 888px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.my-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.close {
+    display: flex;
+    flex-direction: row;
+}

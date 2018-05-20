@@ -1,0 +1,31 @@
+.zoomImage{
+    display: block;
+    max-width: 220px;
+    height: 180px;
+    background-size: cover;
+}
+
+mat-icon.avatar {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.icon-button {
+    position: absolute;
+    top: 260px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.add-heart {
+    float: right;
+}
+
+.avatar-name {
+    float: left;
+    color: antiquewhite;
+}
+
+.photo-item {
+    position: relative; cursor: pointer;
+}

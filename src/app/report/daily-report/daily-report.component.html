@@ -1,0 +1,27 @@
+<div class="daily-report">
+  <div echarts [options]="chartOption" class="demo-chart" [merge]="mergeOptions"></div>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" class="report-table">
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> 名字 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="author">
+        <mat-header-cell *matHeaderCellDef> 上传者 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="image">
+        <mat-header-cell *matHeaderCellDef> 缩略图 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <img class="zoomImage" src="http://localhost:8080/images/{{element.image}}" alt="照片" (click)="onSelect(item)">
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
